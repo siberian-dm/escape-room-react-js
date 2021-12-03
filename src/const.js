@@ -6,3 +6,17 @@ export const Logo = {
   width: 134,
   height: 50,
 };
+
+export const APIRoute = {
+  Quest: '/quests',
+  Orders: '/orders',
+};
+
+export const ReducerName = {
+  Quests: 'quests',
+};
+
+export const FetchState = {
+  Idle: 'idle',
+  Pending: 'pending',
+};
