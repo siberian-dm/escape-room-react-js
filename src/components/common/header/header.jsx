@@ -1,11 +1,11 @@
-import logo from 'assets/img/logo.svg';
+import { Logo } from 'const';
 import * as S from './header.styled';
 
 const Header = () => (
   <S.StyledHeader>
     <S.HeaderWrapper>
       <S.Logo>
-        <S.Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
+        <S.Image src={Logo.src} alt={Logo.alt} width={Logo.width} height={Logo.height} />
       </S.Logo>
 
       <S.Navigation>
