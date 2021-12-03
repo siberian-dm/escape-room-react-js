@@ -7,6 +7,11 @@ export const Logo = {
   height: 50,
 };
 
+export const QuestImage = {
+  width: 344,
+  height: 232,
+};
+
 export const APIRoute = {
   Quest: '/quests',
   Orders: '/orders',
