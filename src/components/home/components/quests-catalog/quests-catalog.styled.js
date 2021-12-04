@@ -91,6 +91,8 @@ const QuestsList = styled.ul`
   }
 `;
 
+const TabImage = styled.img``;
+
 const QuestItem = styled.li``;
 
 const QuestItemLink = styled(Link)`
@@ -202,6 +204,7 @@ const QuestFeatureItem = styled.li`
 
 export {
   Tabs,
+  TabImage,
   TabItem,
   TabBtn,
   TabTitle,

@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { getQuestCards } from 'store/selectors';
+import { getFilteredQuestCards } from 'store/selectors';
 import QuestsCard from './quest-card';
 import * as S from './quests-catalog.styled';
 
 const QuestList = () => {
-  const questCards = useSelector(getQuestCards);
+  const questCards = useSelector(getFilteredQuestCards);
 
   return (
     <S.QuestsList>

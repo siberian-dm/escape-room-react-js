@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ReducerName } from 'const';
+import { QuestTab, ReducerName } from 'const';
 import { fetchQuestCards } from './api-action';
 import { FetchState } from 'const';
 
 const initialState = {
   questCards: [],
+  activeFilter: QuestTab.All.type,
   isQuestsLoaded: false,
   fetchState: FetchState.Idle,
   currentRequestId: undefined,
@@ -14,7 +15,11 @@ const initialState = {
 const questsSlice = createSlice({
   name: ReducerName.Quests,
   initialState,
-  reducers: {},
+  reducers: {
+    setFilter: (state, action) => {
+      state.activeFilter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchQuestCards.pending, (state, action) => {
@@ -50,6 +55,7 @@ const questsSlice = createSlice({
   },
 });
 
-const { reducer } = questsSlice;
+const { reducer, actions } = questsSlice;
 
+export const { setFilter } = actions;
 export default reducer;
