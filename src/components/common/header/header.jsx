@@ -5,7 +5,12 @@ const Header = () => (
   <S.StyledHeader>
     <S.HeaderWrapper>
       <S.Logo>
-        <S.Image src={Logo.src} alt={Logo.alt} width={Logo.width} height={Logo.height} />
+        <S.Image
+          src={Logo.src}
+          alt={Logo.alt}
+          width={Logo.width}
+          height={Logo.height}
+        />
       </S.Logo>
 
       <S.Navigation>
