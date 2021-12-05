@@ -5,6 +5,8 @@ export const getQuestCards = (state) => state[ReducerName.Quests].questCards;
 
 export const getActiveFilter = (state) => state[ReducerName.Quests].activeFilter;
 
+export const getIsQuestloaded = (state) => state[ReducerName.Quests].isQuestsLoaded;
+
 export const getFilteredQuestCards = createSelector(
   getQuestCards,
   getActiveFilter,

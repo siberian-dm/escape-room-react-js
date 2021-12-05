@@ -19,8 +19,15 @@ export const QuestImage = {
 };
 
 export const APIRoute = {
-  Quest: '/quests',
+  Quests: '/quests',
   Orders: '/orders',
+};
+
+export const AppRoute = {
+  Root: '/',
+  Quest: '/detailed-quest/:id',
+  Contacts: '/contacts',
+  NotFound: '/not-found',
 };
 
 export const ReducerName = {
@@ -30,6 +37,12 @@ export const ReducerName = {
 export const FetchState = {
   Idle: 'idle',
   Pending: 'pending',
+};
+
+export const questLevels = {
+  hard: 'сложный',
+  medium: 'средний',
+  easy: 'простой',
 };
 
 export const QuestTab = {

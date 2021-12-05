@@ -1,24 +1,24 @@
+import App from 'components/app/app';
+import rootReducer from 'store/root-reducer';
 import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import App from 'components/app/app';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import questsReducer from 'store/reducer';
-import { fetchQuestCards } from 'store/api-action';
-import { ReducerName } from 'const';
+import { ToastContainer } from 'react-toastify';
+import { fetchQuestCardsAction } from 'store/api-action';
+import 'react-toastify/dist/ReactToastify.css';
 
 const store = configureStore({
-  reducer: {
-    [ReducerName.Quests]: questsReducer,
-  },
+  reducer: rootReducer,
 });
 
-store.dispatch(fetchQuestCards())
+store.dispatch(fetchQuestCardsAction())
 
 render(
   <StrictMode>
     <Provider store={store}>
-    <App />
+      <ToastContainer />
+      <App />
     </Provider>
   </StrictMode>,
   document.getElementById('root'),

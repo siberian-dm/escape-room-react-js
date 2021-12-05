@@ -1,16 +1,9 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
-import { APIRoute, QuestImage } from 'const';
+import { QuestImage, questLevels } from 'const';
 import * as S from './quests-catalog.styled';
 
-const questLevels = {
-  hard: 'сложный',
-  medium: 'средний',
-  easy: 'простой',
-}
-
 const QuestCard = ({ card }) => {
-
   const {
     id,
     title,
@@ -21,7 +14,7 @@ const QuestCard = ({ card }) => {
 
   return (
       <S.QuestItem>
-        <S.QuestItemLink to={`${APIRoute.Quest}/${id}`}>
+        <S.QuestItemLink to={`/detailed-quest/${id}`}>
           <S.Quest>
             <S.QuestImage
               src={previewImg}
