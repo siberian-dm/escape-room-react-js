@@ -3,6 +3,7 @@ import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 import { useState } from 'react';
 import { createAPI } from 'services/api';
 import { APIRoute } from 'const';
+import { toast } from 'react-toastify';
 
 const PEOPLE_COUNT_MIN = 1;
 const PEOPLE_COUNT_MAX = 99;
@@ -40,11 +41,11 @@ const BookingModal = ({ callback: handleCloseBookingModal }) => {
 
   const postFormData = async (formData) => {
     try {
-      const { data } = await api.post(APIRoute.Orders, formData);
-      console.log(data);
+      await api.post(APIRoute.Orders, formData);
+      toast.info('Заявка успешно отправлена');
     }
     catch (error) {
-      console.log(error.message);
+      toast.error(error.message);
     }
   }
 
