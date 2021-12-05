@@ -23,12 +23,16 @@ const questTypes = {
 const DetailedQuest = () => {
   const { id } = useParams();
 
-  const { data, isLoading, error } = useFetch(`${APIRoute.Quest}/${id}`)
+  const { data, isLoading, error } = useFetch(`${APIRoute.Quests}/${id}`)
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
+  };
+
+  const handleCloseBookingModal = () => {
+    setIsBookingModalOpened(false);
   };
 
   if (error && error.response.status === NOT_FOUND_STATUS_CODE ) {
@@ -53,7 +57,7 @@ const DetailedQuest = () => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          src={coverImg}
+          src={`/${coverImg}`}
           alt={`Квест ${title}`}
           width="1366"
           height="768"
@@ -90,7 +94,7 @@ const DetailedQuest = () => {
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {isBookingModalOpened && <BookingModal callback={handleCloseBookingModal}/>}
       </S.Main>
     </MainLayout>
   );

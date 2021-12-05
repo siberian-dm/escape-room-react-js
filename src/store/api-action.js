@@ -16,7 +16,7 @@ export const fetchQuestCardsAction = createAsyncThunk(
       return;
     }
 
-    const { data } = await api.get(APIRoute.Quest);
+    const { data } = await api.get(APIRoute.Quests);
     return data;
   }
 );

@@ -19,7 +19,7 @@ export const QuestImage = {
 };
 
 export const APIRoute = {
-  Quest: '/quests',
+  Quests: '/quests',
   Orders: '/orders',
 };
 
