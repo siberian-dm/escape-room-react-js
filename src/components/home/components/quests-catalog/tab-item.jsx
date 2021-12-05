@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilter } from 'store/reducer';
-import { getActiveFilter } from 'store/selectors';
+import { setFilter } from 'store/quests-reducer/reducer';
+import { getActiveFilter } from 'store/quests-reducer/selectors';
 import * as S from './quests-catalog.styled';
 
 const TabItem = ({ icon, title, type }) => {

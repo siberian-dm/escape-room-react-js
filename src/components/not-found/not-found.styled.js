@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Main = styled.main`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ const NotFoundText = styled.h2`
 `;
 
 export {
-  Main,
+  Container,
   Image,
   NotFoundText,
 };

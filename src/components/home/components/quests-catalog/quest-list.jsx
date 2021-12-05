@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getFilteredQuestCards } from 'store/selectors';
+import { getFilteredQuestCards } from 'store/quests-reducer/selectors';
 import QuestsCard from './quest-card';
 import * as S from './quests-catalog.styled';
 
