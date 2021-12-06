@@ -26,6 +26,8 @@ export const APIRoute = {
 export const AppRoute = {
   Root: '/',
   Quest: '/detailed-quest/:id',
+  Newbies: '/newbies',
+  Promotions: '/promotions',
   Contacts: '/contacts',
   NotFound: '/not-found',
 };
@@ -44,6 +46,25 @@ export const questLevels = {
   medium: 'средний',
   easy: 'простой',
 };
+
+export const AppPage = {
+  Quests: {
+    path: AppRoute.Root,
+    title: 'Квесты'
+  },
+  Newbies: {
+    path: AppRoute.Newbies,
+    title: 'Новичкам'
+  },
+  Promotions: {
+    path: AppRoute.Promotions,
+    title: 'Акции'
+  },
+  Contacts: {
+    path: AppRoute.Contacts,
+    title: 'Контакты'
+  },
+}
 
 export const QuestTab = {
   All: {
