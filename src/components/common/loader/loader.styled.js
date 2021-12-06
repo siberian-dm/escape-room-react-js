@@ -17,24 +17,23 @@ const SvgIcon = styled.svg.attrs({
   version: '1.1',
   xmlns: 'http://www.w3.org/2000/svg',
   xmlnsXlink: 'http://www.w3.org/1999/xlink',
-  preserveAspectRatio: "xMidYMid",
+  width: '60px',
+  height: '60px',
+  viewBox: '0 0 100 100',
+  preserveAspectRatio: 'xMidYMid',
 })`
   background: none;
   display: block;
   shape-rendering: auto;
-  width: 100px;
-  height: 100px;
-  viewBox: 0 0 100 100;
 `
 const LoadingText = styled.h2`
   display: block;
   margin: 0px;
-  padding-top: 35px;
-  height: 100px;
+  height: 60px;
+  padding-top: 15px;
   font-size: ${({ theme }) => theme.font.medium};
   font-weight: 700;
   color: ${({ theme }) => theme.color.white};
 `;
-
 
 export { Container, SvgIcon, LoadingText };

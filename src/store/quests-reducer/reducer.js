@@ -6,7 +6,6 @@ import { FetchState } from 'const';
 const initialState = {
   questCards: [],
   activeFilter: QuestTab.All.type,
-  isQuestsLoaded: false,
   fetchState: FetchState.Idle,
   currentRequestId: undefined,
   error: null,
