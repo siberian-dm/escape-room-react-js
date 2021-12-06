@@ -1,6 +1,6 @@
+import QuestsCard from './quest-card';
 import { useSelector } from 'react-redux';
 import { getFilteredQuestCards } from 'store/quests-reducer/selectors';
-import QuestsCard from './quest-card';
 import * as S from './quests-catalog.styled';
 
 const QuestList = () => {
@@ -8,7 +8,7 @@ const QuestList = () => {
 
   return (
     <S.QuestsList>
-      {questCards.map((card) => (
+      {questCards.length !== 0 && questCards.map((card) => (
         <QuestsCard
           key={card.id}
           card={card}

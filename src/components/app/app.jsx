@@ -8,18 +8,20 @@ import { appTheme } from './common';
 import { Router, Route, Switch, Redirect } from 'components/common/common';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { AppRoute } from 'const';
-import { getIsQuestloaded } from 'store/quests-reducer/selectors';
+import { AppRoute, FetchState } from 'const';
+import { getFetchState } from 'store/quests-reducer/selectors';
 import * as S from './app.styled';
 
 const App = () => {
-  const isDataloaded = useSelector(getIsQuestloaded);
+  const fetchState = useSelector(getFetchState);
 
   return (
     <ThemeProvider theme={appTheme}>
       <S.GlobalStyle />
-      {isDataloaded
+      {fetchState === FetchState.Pending
         ?
+        <Loader />
+        :
         (<Router>
           <Switch>
             <Route exact path={AppRoute.Root}>
@@ -44,9 +46,7 @@ const App = () => {
               <Redirect to={AppRoute.NotFound}/>
             </Route>
           </Switch>
-        </Router>)
-        :
-        <Loader />}
+        </Router>)}
     </ThemeProvider>
   );
 };

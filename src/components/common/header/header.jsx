@@ -21,6 +21,7 @@ const Header = () => {
           <S.Links>
             {Object.values(AppPage).map(({ path, title }) => (
               <NavItem
+                key={title}
                 title={title}
                 isActive={pathname === path}
                 path={path}

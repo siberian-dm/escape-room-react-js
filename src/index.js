@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { fetchQuestCardsAction } from 'store/api-action';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +12,16 @@ const store = configureStore({
   reducer: rootReducer,
 });
 
-store.dispatch(fetchQuestCardsAction())
+const fetchData = async () => {
+  try {
+    await store.dispatch(fetchQuestCardsAction()).unwrap();
+  }
+  catch (error) {
+    toast.error(error.message);
+  }
+};
+
+fetchData();
 
 render(
   <StrictMode>
