@@ -3,8 +3,7 @@ import DetailedQuest from 'components/detailed-quest/detailed-quest';
 import Home from 'components/home/home';
 import Loader from 'components/common/loader/loader';
 import NotFound from 'components/not-found/not-found';
-import Promotions from 'components/promotions/promotions';
-import Newbies from 'components/newbies/newbies';
+import NotImplemented from 'components/no-implemented/no-implemented';
 import { appTheme } from './common';
 import { Router, Route, Switch, Redirect } from 'components/common/common';
 import { useSelector } from 'react-redux';
@@ -27,10 +26,10 @@ const App = () => {
               <Home />
             </Route>
             <Route exact path={AppRoute.Newbies}>
-              <Newbies />
+              <NotImplemented />
             </Route>
             <Route exact path={AppRoute.Promotions}>
-              <Promotions />
+              <NotImplemented />
             </Route>
             <Route exact path={AppRoute.Contacts}>
               <Contacts />
