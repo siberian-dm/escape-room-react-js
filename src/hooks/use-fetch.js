@@ -3,8 +3,8 @@ import { createAPI } from 'services/api';
 
 const api = createAPI();
 
-const useFetch = (url) => {
-  const [data, setData] = useState(null);
+const useFetch = (url, initialData) => {
+  const [data, setData] = useState(initialData);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,7 +27,6 @@ const useFetch = (url) => {
     fetchData();
 
     return () => {
-      setData(null);
       setError(null);
     };
   }, [url])

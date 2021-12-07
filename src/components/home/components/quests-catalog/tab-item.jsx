@@ -10,7 +10,7 @@ const TabItem = ({ icon, title, type }) => {
 
   const dispatch = useDispatch();
 
-  const handleTabClick = () => {
+  const onTabBtnClick = () => {
     dispatch(setFilter(type));
   }
 
@@ -18,7 +18,7 @@ const TabItem = ({ icon, title, type }) => {
     <S.TabItem>
       <S.TabBtn
         isActive={isActive}
-        onClick={handleTabClick}
+        onClick={onTabBtnClick}
       >
         <S.TabImage src={icon}/>
         <S.TabTitle>{title}</S.TabTitle>

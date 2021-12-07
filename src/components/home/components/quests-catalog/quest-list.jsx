@@ -7,14 +7,19 @@ const QuestList = () => {
   const questCards = useSelector(getFilteredQuestCards);
 
   return (
-    <S.QuestsList>
-      {questCards.length !== 0 && questCards.map((card) => (
-        <QuestsCard
-          key={card.id}
-          card={card}
-        />)
-      )}
-    </S.QuestsList>
+    <>
+      {questCards.length === 0
+      ? <S.NoQuestsTitle>Нет доступных квестов для прохождения.</S.NoQuestsTitle>
+      :
+      (<S.QuestsList>
+        {questCards.map((card) => (
+          <QuestsCard
+            key={card.id}
+            card={card}
+          />)
+        )}
+      </S.QuestsList>)}
+    </>
   );
 };
 
