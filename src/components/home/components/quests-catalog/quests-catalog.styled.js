@@ -157,6 +157,16 @@ const QuestTitle = styled.h2`
   overflow: hidden;
 `;
 
+const NoQuestsTitle = styled.h2`
+  padding: 0;
+  text-align: center;
+  font-size: ${({ theme }) => theme.font.medium};
+  line-height: 120%;
+  font-weight: 700;
+  color: ${({ theme }) => theme.color.white};
+  word-break: break-word;
+`;
+
 const QuestImage = styled.img`
   z-index: 1;
   position: absolute;
@@ -214,6 +224,7 @@ export {
   Quest,
   QuestContent,
   QuestTitle,
+  NoQuestsTitle,
   QuestImage,
   QuestFeatures,
   QuestFeatureItem,

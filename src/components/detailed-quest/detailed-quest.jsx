@@ -20,10 +20,20 @@ const questTypes = {
   'sci-fi': 'sci-fi',
 };
 
+const initialData = {
+  title: '',
+  description: '',
+  coverImg: '',
+  type: '',
+  level: '',
+  peopleCount: [],
+  duration: '',
+};
+
 const DetailedQuest = () => {
   const { id } = useParams();
 
-  const { data, isLoading, error } = useFetch(`${APIRoute.Quests}/${id}`)
+  const { data, isLoading, error } = useFetch(`${APIRoute.Quests}/${id}`, initialData)
 
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
@@ -35,11 +45,11 @@ const DetailedQuest = () => {
     setIsBookingModalOpened(false);
   };
 
-  if (error && error.response.status === NOT_FOUND_STATUS_CODE ) {
+  if (error !== null && error.response.status === NOT_FOUND_STATUS_CODE ) {
     return <Redirect to={AppRoute.NotFound}/>;
   }
 
-  if (data === null || isLoading) {
+  if (isLoading) {
     return <Loader />;
   }
 
