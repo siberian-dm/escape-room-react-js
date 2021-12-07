@@ -9,7 +9,7 @@ const initialState = {
   fetchState: FetchState.Idle,
   currentRequestId: undefined,
   error: null,
-}
+};
 
 const questsSlice = createSlice({
   name: ReducerName.Quests,
@@ -34,7 +34,6 @@ const questsSlice = createSlice({
           state.currentRequestId === requestId
         ) {
           state.questCards = action.payload;
-          state.isQuestsLoaded = true;
           state.fetchState = FetchState.Idle;
           state.currentRequestId = undefined;
           state.error = null;

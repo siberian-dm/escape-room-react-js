@@ -1,7 +1,7 @@
 import { MainLayout } from 'components/common/common';
-import { Container, PageText } from './no-implemented.styled';
+import { Container, PageText } from './not-implemented.styled';
 
-const NoImplemented = () => (
+const NotImplemented = () => (
   <MainLayout>
     <Container>
       <PageText>На данный момент раздел находится в разработке.</PageText>
@@ -9,4 +9,4 @@ const NoImplemented = () => (
   </MainLayout>
 );
 
-export default NoImplemented;
+export default NotImplemented;
